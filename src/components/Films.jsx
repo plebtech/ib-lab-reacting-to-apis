@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import Card from './Card';
-
-const BASE_URL = 'http://ghibliapi.herokuapp.com/';
+import FCard from './FCard';
 
 class Films extends Component {
     render() {
-        if (this.props.showFilms) {
+        if (this.props.show) {
             return (
-                <div id="card-holder">
+                <div className="card-holder">
                     {this.props.films.map((film) => {
-                        return <Card
+                        return <FCard
                             key={film.id}
                             title={film.title}
                             description={film.description}
