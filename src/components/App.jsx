@@ -21,12 +21,7 @@ class App extends Component {
             showPeople: false,
         }
     }
-    componentDidMount() {
-        // function populateFilms(object) {
-        //     films = Object.keys(object).map(i => object[i]);
-        // }
-
-    }
+    // calls film data fetch function, toggles show state (relied upon by <Films /> tag in render()), sets state for button text.
     toggleFilms() {
         this.loadFilms();
         if (this.state.showFilms === true) {
@@ -36,12 +31,14 @@ class App extends Component {
         }
         this.setState({ showFilms: !this.state.showFilms, showPeople: false, buttonPeopleText: 'Show people', });
     }
+    // makes HTTP fetch request for studio ghibli film manifest.
     loadFilms() {
         fetch(BASE_URL + 'films/')
             .then(response => (response.json()))
             .then(data => this.setState({ films: data }))
             .catch(err => console.log(err));
     }
+    // calls people data fetch function, toggles show state (relied upon by <People /> tag in render()), sets state for button text.
     togglePeople() {
         this.loadPeople();
         if (this.state.showPeople === true) {
@@ -51,6 +48,7 @@ class App extends Component {
         }
         this.setState({ showPeople: !this.state.showPeople, showFilms: false, buttonFilmsText: 'Show films', })
     }
+    // makes HTTP fetch request for studio ghibli character manifest.
     loadPeople() {
         fetch(BASE_URL + 'people/')
             .then(response => (response.json()))
