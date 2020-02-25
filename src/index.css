@@ -12,23 +12,41 @@ body {
     
 }
 
+h1 {
+    font-size: 3em;
+}
+
+#controls {
+    margin: auto;
+}
+#controls > img {
+    margin: auto;
+    background-color: white;
+}
+#controls > button {
+    font-size: 1.5em;
+}
+
 .card {
     margin: 2% 0%;
     border: 1px solid #222;
     padding: 1% 2%;
 }
 .card > h2 {
-    background-color: #555;
     /* border: 1px solid #222; */
     padding: 1%;
+    background-color: #444;
+    font-size: 1.5em;
 }
 .card > h4 > span {
     margin-right: 3%;
-    background-color: #222;
     padding: 1% 2%;
+    background-color: #222;
+    font-size: 1.3em;
 }
 .card > p {
-    background-color: #333;
     /* border: 1px solid #222; */
     padding: 1%;
+    background-color: #333;
+    font-size: 1.3em;
 }
