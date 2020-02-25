@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Card extends Component {
     render() {
         return (
-            <div key={this.props.id} class="card">
+            <div className="card">
                 <h2>{this.props.title}</h2>
                 <h4>
                     <span>rt: {this.props.rt}</span>

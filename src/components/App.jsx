@@ -21,15 +21,8 @@ class App extends Component {
         // }
         fetch(BASE_URL + 'films/')
             .then(response => (response.json()))
-            .then(data => {
-                data.map(item => {
-                    // console.log(item);
-                    FILMS.push(item);
-                    this.setState({
-                        films: [...FILMS],
-                    });
-                });
-            });
+            .then(data => this.setState({ films: data }))
+            .catch(err => console.log(err));
         this.setState({ showFilms: false, });
     }
     toggleFilms() {

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Card from './Card';
 
-class List extends Component {
+const BASE_URL = 'http://ghibliapi.herokuapp.com/';
+
+class Films extends Component {
     render() {
-        if (this.props.show) {
+        if (this.props.showFilms) {
             return (
                 <div id="card-holder">
                     {this.props.films.map((film) => {
@@ -23,4 +25,4 @@ class List extends Component {
     }
 }
 
-export default List;
+export default Films;
